@@ -1,0 +1,68 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{anysize}
+\marginsize{2cm}{2cm}{1cm}{1cm} 
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xgreek}
+\usepackage{fancyvrb}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{enumitem} 
+\usepackage{framed} 
+\usepackage{relsize}
+\usepackage{float} 
+\setmainfont[Mapping=tex-text]{FreeSerif}
+\begin{document}
+
+\def\thesubsection {Ζήτημα \Roman{subsection})}
+
+\include{title/title}
+
+\section*{} 
+\subsection{Ανάλυση GOMS}
+
+\lstset{basicstyle=\small, emph={GOAL}, emphstyle=\color{red}, 
+emph={[2]OR, base}, emphstyle={[2]\color{blue}}, 
+emph={[3]Log, Leave, Enter, Click, Type, Press, Locate, Hoover, Find, Give,
+Scroll, Submit, base}, emphstyle={[3]\color{black}\bfseries}}
+
+\begin{lstlisting}
+GOAL: Comment Paper
+.      GOAL: Log in
+.      .      - Click on 'log in' link
+.      .      - Type user name
+.      .      --- Click on password field OR
+.      .             Press <TAB>
+.      .      --- Click on 'Sign in' button OR
+.      .             Press <ENTER>
+.      GOAL: Find desired paper
+.      .      GOAL: Find in 'Recently Viewed Screen' (default screen) OR
+.      .      .      - Locate desired paper on default pages
+.      .      .      - Click on article link
+.      .      GOAL: Find in 'Favorites' menu (upper right) OR
+.      .      .      - Hoover mouse over 'Favorites' link
+.      .      .      - Click on link
+.      .      GOAL: Find in Search
+.      .      .      --- Click on searchbox (top of page, above menu)
+.      .      .      - Enter search terms (automatic search with every new word)
+.      .      .      - Locate desired paper on result pages
+.      .      .      - Click on paper link
+.      GOAL: Give a Thumbs Up/Down OR
+.      .      - Click on the thumbsup/down button
+.      GOAL: Leave a Comment
+.      .      GOAL: Enter Comment Mode
+.      .      .      GOAL: Enter 'quick comment' mode OR
+.      .      .      .      - Scroll to bottom of page
+.      .      .      .      - Click on comment box
+.      .      .      GOAL: Enter 'Advanced comment' mode
+.      .      .      .      --- Click on 'Add a Comment' link
+.      .      GOAL: Submit Comment
+.      .      .      - Type comment
+.      .      .             (if on advanced comment, insert formating)
+.      .      .      --- Click on 'Submit' button
+\end{lstlisting}
+
+
+\end{document}
